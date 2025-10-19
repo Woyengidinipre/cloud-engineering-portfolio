@@ -16,20 +16,6 @@ jobs:
     name: Run Tests
     runs-on: ubuntu-latest
     
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: testdb
-        options: >-
-          --health-cmd="mysqladmin ping"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=3
-        ports:
-          - 3306:3306
-    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -40,15 +26,15 @@ jobs:
           node-version: '22'
       
       - name: Install backend dependencies
-        working-directory: ./backend
+        working-directory: ./project-01-three-tier-app/backend
         run: npm install
       
       - name: Install frontend dependencies
-        working-directory: ./frontend
+        working-directory: ./project-01-three-tier-app/frontend
         run: npm install
       
       - name: Build frontend
-        working-directory: ./frontend
+        working-directory: ./project-01-three-tier-app/frontend
         run: npm run build
 
   # Build and push job - only on main branch
@@ -77,7 +63,7 @@ jobs:
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
-        working-directory: ./backend
+        working-directory: ./project-01-three-tier-app/backend
         run: |
           docker build -t $REGISTRY/three-tier-backend:latest .
           docker tag $REGISTRY/three-tier-backend:latest $REGISTRY/three-tier-backend:$IMAGE_TAG
@@ -88,7 +74,7 @@ jobs:
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
-        working-directory: ./frontend
+        working-directory: ./project-01-three-tier-app/frontend
         run: |
           docker build -t $REGISTRY/three-tier-frontend:latest .
           docker tag $REGISTRY/three-tier-frontend:latest $REGISTRY/three-tier-frontend:$IMAGE_TAG
