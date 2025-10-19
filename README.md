@@ -39,3 +39,5 @@ Week 3-4: Project 2 | Week 5-6: Project 3
 
 ⭐ Star this repo if helpful!# cloud-engineering-portfolio
 Production-ready cloud engineering projects showcasing AWS expertise, Infrastructure as Code, and modern DevOps practices
+
+# Updated with full CI/CD pipeline - permissions now configured
