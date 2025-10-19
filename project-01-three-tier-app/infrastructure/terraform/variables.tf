@@ -69,3 +69,13 @@ variable "db_username" {
   type        = string
   default     = "admin"
 }
+
+variable "backend_image_uri" {
+  description = "Docker image URI for backend"
+  type        = string
+}
+
+variable "frontend_image_uri" {
+  description = "Docker image URI for frontend"
+  type        = string
+}
