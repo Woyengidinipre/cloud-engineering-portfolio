@@ -30,10 +30,6 @@ Build 3 major cloud engineering projects + 9 mini-projects
 **Cloud**: AWS | **IaC**: Terraform  
 **Containers**: Docker, Kubernetes | **Languages**: Python, JavaScript, Bash
 
-## 📈 Timeline
-
-Week 1: Project 1 Setup | Week 2: Complete Project 1  
-Week 3-4: Project 2 | Week 5-6: Project 3
 
 ---
 
