@@ -7,7 +7,7 @@
 
 ## 🎯 Portfolio Goal
 
-Build 3 major cloud engineering projects + 9 mini-projects by **October 31, 2025**
+Build 3 major cloud engineering projects + 9 mini-projects
 
 **Current Progress**: Week 1 - Foundation Setup ✅
 
